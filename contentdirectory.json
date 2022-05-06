@@ -1,0 +1,351 @@
+{
+    "scpd": {
+        "@xmlns": "urn:schemas-upnp-org:service-1-0",
+        "specVersion": {
+            "major": "1",
+            "minor": "0"
+        },
+        "actionList": {
+            "action": [
+                {
+                    "name": "GetSearchCapabilities",
+                    "argumentList": {
+                        "argument": {
+                            "name": "SearchCaps",
+                            "direction": "out",
+                            "relatedStateVariable": "SearchCapabilities"
+                        }
+                    }
+                },
+                {
+                    "name": "GetSortCapabilities",
+                    "argumentList": {
+                        "argument": {
+                            "name": "SortCaps",
+                            "direction": "out",
+                            "relatedStateVariable": "SortCapabilities"
+                        }
+                    }
+                },
+                {
+                    "name": "GetSystemUpdateID",
+                    "argumentList": {
+                        "argument": {
+                            "name": "Id",
+                            "direction": "out",
+                            "relatedStateVariable": "SystemUpdateID"
+                        }
+                    }
+                },
+                {
+                    "name": "Browse",
+                    "argumentList": {
+                        "argument": [
+                            {
+                                "name": "ObjectID",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_ObjectID"
+                            },
+                            {
+                                "name": "BrowseFlag",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_BrowseFlag"
+                            },
+                            {
+                                "name": "Filter",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_Filter"
+                            },
+                            {
+                                "name": "StartingIndex",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_Index"
+                            },
+                            {
+                                "name": "RequestedCount",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_Count"
+                            },
+                            {
+                                "name": "SortCriteria",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_SortCriteria"
+                            },
+                            {
+                                "name": "Result",
+                                "direction": "out",
+                                "relatedStateVariable": "A_ARG_TYPE_Result"
+                            },
+                            {
+                                "name": "NumberReturned",
+                                "direction": "out",
+                                "relatedStateVariable": "A_ARG_TYPE_Count"
+                            },
+                            {
+                                "name": "TotalMatches",
+                                "direction": "out",
+                                "relatedStateVariable": "A_ARG_TYPE_Count"
+                            },
+                            {
+                                "name": "UpdateID",
+                                "direction": "out",
+                                "relatedStateVariable": "A_ARG_TYPE_UpdateID"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "Search",
+                    "argumentList": {
+                        "argument": [
+                            {
+                                "name": "ContainerID",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_ObjectID"
+                            },
+                            {
+                                "name": "SearchCriteria",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_SearchCriteria"
+                            },
+                            {
+                                "name": "Filter",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_Filter"
+                            },
+                            {
+                                "name": "StartingIndex",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_Index"
+                            },
+                            {
+                                "name": "RequestedCount",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_Count"
+                            },
+                            {
+                                "name": "SortCriteria",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_SortCriteria"
+                            },
+                            {
+                                "name": "Result",
+                                "direction": "out",
+                                "relatedStateVariable": "A_ARG_TYPE_Result"
+                            },
+                            {
+                                "name": "NumberReturned",
+                                "direction": "out",
+                                "relatedStateVariable": "A_ARG_TYPE_Count"
+                            },
+                            {
+                                "name": "TotalMatches",
+                                "direction": "out",
+                                "relatedStateVariable": "A_ARG_TYPE_Count"
+                            },
+                            {
+                                "name": "UpdateID",
+                                "direction": "out",
+                                "relatedStateVariable": "A_ARG_TYPE_UpdateID"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "X_GetFeatureList",
+                    "argumentList": {
+                        "argument": {
+                            "name": "FeatureList",
+                            "direction": "out",
+                            "relatedStateVariable": "A_ARG_TYPE_Featurelist"
+                        }
+                    }
+                },
+                {
+                    "name": "X_SetBookmark",
+                    "argumentList": {
+                        "argument": [
+                            {
+                                "name": "CategoryType",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_CategoryType"
+                            },
+                            {
+                                "name": "RID",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_RID"
+                            },
+                            {
+                                "name": "ObjectID",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_ObjectID"
+                            },
+                            {
+                                "name": "PosSecond",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_PosSec"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "X_BrowseByLetter",
+                    "argumentList": {
+                        "argument": [
+                            {
+                                "name": "ObjectID",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_ObjectID"
+                            },
+                            {
+                                "name": "BrowseFlag",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_BrowseFlag"
+                            },
+                            {
+                                "name": "Filter",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_Filter"
+                            },
+                            {
+                                "name": "StartingLetter",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_BrowseLetter"
+                            },
+                            {
+                                "name": "RequestedCount",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_Count"
+                            },
+                            {
+                                "name": "SortCriteria",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_SortCriteria"
+                            },
+                            {
+                                "name": "Result",
+                                "direction": "out",
+                                "relatedStateVariable": "A_ARG_TYPE_Result"
+                            },
+                            {
+                                "name": "NumberReturned",
+                                "direction": "out",
+                                "relatedStateVariable": "A_ARG_TYPE_Count"
+                            },
+                            {
+                                "name": "TotalMatches",
+                                "direction": "out",
+                                "relatedStateVariable": "A_ARG_TYPE_Count"
+                            },
+                            {
+                                "name": "UpdateID",
+                                "direction": "out",
+                                "relatedStateVariable": "A_ARG_TYPE_UpdateID"
+                            },
+                            {
+                                "name": "StartingIndex",
+                                "direction": "out",
+                                "relatedStateVariable": "A_ARG_TYPE_Index"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "serviceStateTable": {
+            "stateVariable": [
+                {
+                    "@sendEvents": "no",
+                    "name": "A_ARG_TYPE_Filter",
+                    "dataType": "string"
+                },
+                {
+                    "@sendEvents": "no",
+                    "name": "A_ARG_TYPE_SortCriteria",
+                    "dataType": "string"
+                },
+                {
+                    "@sendEvents": "no",
+                    "name": "A_ARG_TYPE_Index",
+                    "dataType": "ui4"
+                },
+                {
+                    "@sendEvents": "no",
+                    "name": "A_ARG_TYPE_Count",
+                    "dataType": "ui4"
+                },
+                {
+                    "@sendEvents": "no",
+                    "name": "A_ARG_TYPE_UpdateID",
+                    "dataType": "ui4"
+                },
+                {
+                    "@sendEvents": "no",
+                    "name": "SearchCapabilities",
+                    "dataType": "string"
+                },
+                {
+                    "@sendEvents": "no",
+                    "name": "SortCapabilities",
+                    "dataType": "string"
+                },
+                {
+                    "@sendEvents": "yes",
+                    "name": "SystemUpdateID",
+                    "dataType": "ui4"
+                },
+                {
+                    "@sendEvents": "no",
+                    "name": "A_ARG_TYPE_SearchCriteria",
+                    "dataType": "string"
+                },
+                {
+                    "@sendEvents": "no",
+                    "name": "A_ARG_TYPE_Result",
+                    "dataType": "string"
+                },
+                {
+                    "@sendEvents": "no",
+                    "name": "A_ARG_TYPE_ObjectID",
+                    "dataType": "string"
+                },
+                {
+                    "@sendEvents": "no",
+                    "name": "A_ARG_TYPE_BrowseFlag",
+                    "dataType": "string",
+                    "allowedValueList": {
+                        "allowedValue": [
+                            "BrowseMetadata",
+                            "BrowseDirectChildren"
+                        ]
+                    }
+                },
+                {
+                    "@sendEvents": "no",
+                    "name": "A_ARG_TYPE_BrowseLetter",
+                    "dataType": "string"
+                },
+                {
+                    "@sendEvents": "no",
+                    "name": "A_ARG_TYPE_CategoryType",
+                    "dataType": "ui4"
+                },
+                {
+                    "@sendEvents": "no",
+                    "name": "A_ARG_TYPE_RID",
+                    "dataType": "ui4"
+                },
+                {
+                    "@sendEvents": "no",
+                    "name": "A_ARG_TYPE_PosSec",
+                    "dataType": "ui4"
+                },
+                {
+                    "@sendEvents": "no",
+                    "name": "A_ARG_TYPE_Featurelist",
+                    "dataType": "string"
+                }
+            ]
+        }
+    }
+}
