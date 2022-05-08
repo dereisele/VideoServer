@@ -1,12 +1,14 @@
-from asyncio import transports
+import asyncio
 from enum import Enum
 import platform
+import logging
 
 import ssdp
 
-__version_info__ = (0, 0, 1)
-__version__ = '.'.join(map(str, __version_info__))
-__service_name__ = 'Test'
+from .. import __service_name__, __version__
+from ..settings import Settings
+
+log = logging.getLogger(__name__)
 
 
 class Header(str, Enum):
@@ -31,11 +33,17 @@ class MediaServerDiscover(ssdp.SimpleServiceDiscoveryProtocol):
     USN_MS = "uuid:2fac1234-31f8-11b4-a222-08002b34c003::urn:schemas-upnp-org:device:MediaServer:1"
     SERVER_ID = f'{platform.system()},{platform.release()},UPnP/1.0,{__service_name__},{__version__}'
 
-    def __init__(self):
+    def __init__(self, settings: Settings):
         self.transport = None
+        self.settings = settings
 
-    def connection_made(self, transport: transports.DatagramTransport) -> None:
+    def connection_made(self, transport: asyncio.transports.DatagramTransport) -> None:
+        log.info("Made connection to Socket")
         self.transport = transport
+
+    def connection_lost(self, exc):
+        log.info("Lost connection to Socket")
+        pass
 
     def response_received(self, response, addr):
         """Handle an incoming response."""
@@ -111,3 +119,6 @@ class MediaServerDiscover(ssdp.SimpleServiceDiscoveryProtocol):
 
         self._devices_local[usn] = device
         self._send_alive(usn)
+
+    def shutdown(self):
+        self.transport.close()
